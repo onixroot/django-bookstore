@@ -21,7 +21,7 @@ class HomepageTests(SimpleTestCase):
 
     def test_homepage_does_not_contain_incorrect_html(self):
         self.assertNotContains(
-            self.response, 'Matrix has you!')
+            self.response, 'Hi there! I should not be on the page.')
 
     def test_homepage_url_resolves_homepageview(self): 
         view = resolve('/')
@@ -48,7 +48,7 @@ class AboutPageTests(SimpleTestCase):
 
     def test_aboutpage_does_not_contain_incorrect_html(self):
         self.assertNotContains(
-            self.response, 'Matrix has you!')
+            self.response, 'Hi there! I should not be on the page.')
 
     def test_aboutpage_url_resolves_aboutpageview(self):
         view = resolve('/about/')

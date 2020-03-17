@@ -7,14 +7,13 @@ from django.contrib.auth.mixins import (
 from django.views.generic import ListView, DetailView
 
 from .models import Book
-
+from django.urls import reverse
 
 class BookListView(LoginRequiredMixin, ListView):
     model = Book
     context_object_name = 'book_list'
     template_name = 'books/book_list.html'
     login_url = 'account_login'
-
 
 class BookDetailView(
     LoginRequiredMixin,

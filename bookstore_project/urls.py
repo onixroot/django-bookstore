@@ -3,9 +3,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls import url
+import private_storage.urls
+
 urlpatterns = [
     # Django admin
-    path('anything-but-admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
     # User management
     path('accounts/', include('allauth.urls')),
@@ -15,6 +18,10 @@ urlpatterns = [
     path('books/', include('books.urls')),
     path('orders/', include('orders.urls')), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
+urlpatterns += [
+    url('^private-media/', include(private_storage.urls), name='private-media'),
+]
 
 if settings.DEBUG:
     import debug_toolbar

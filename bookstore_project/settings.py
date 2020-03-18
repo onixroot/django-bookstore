@@ -208,7 +208,7 @@ if ENVIRONMENT == 'production':
     CSRF_COOKIE_SECURE = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-PRIVATE_STORAGE_ROOT = '/private_media/'
+PRIVATE_STORAGE_ROOT = os.path.join(BASE_DIR, 'private_media')
 PRIVATE_STORAGE_AUTH_FUNCTION = 'books.permissions.allow_special_status'
 
 if ENVIRONMENT == 'development':

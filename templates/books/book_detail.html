@@ -9,7 +9,7 @@
   {% endif %}
   <p>Author: {{ book.author }}</p>
   <p>Price: {{ book.price }} $</p>
-  <p>Link: <a href="/private-media/{{ book.pdf_file }}">Скачать PDF</a></p>
+  <p>Link: <a href="{{ book.pdf_file.url }}">Скачать PDF</a></p>
   <div>
     <h3>Reviews</h3>
     <ul>
